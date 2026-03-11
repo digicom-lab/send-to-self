@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myGENE Prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>myGENE</h1>
+<p>Your Personal Memory System</p>
+</header>
+
+<div class="nav">
+<button onclick="showScreen('inbox')">Inbox</button>
+<button onclick="showScreen('send')">Send to Self</button>
+<button onclick="showScreen('chat')">Ask myGENE</button>
+<button onclick="showScreen('insights')">Insights</button>
+</div>
+
+<!-- INBOX -->
+
+<div id="inbox" class="screen">
+
+<h2>Inbox</h2>
+
+<div class="item" onclick="showScreen('detail')">
+📷 Screenshot — OFW remittance idea
+</div>
+
+<div class="item">
+🔗 Article — Digital remittance future
+</div>
+
+<div class="item">
+🎙 Voice thought — Tourism concept
+</div>
+
+</div>
+
+<!-- SEND TO SELF -->
+
+<div id="send" class="screen">
+
+<h2>Send to Self</h2>
+
+<textarea id="captureInput" placeholder="Paste link, idea, or note..."></textarea>
+
+<button onclick="saveItem()">Send</button>
+
+<p id="savedMessage"></p>
+
+</div>
+
+<!-- DETAIL -->
+
+<div id="detail" class="screen">
+
+<h2>Saved Item</h2>
+
+<p><strong>Title:</strong> OFW Remittance Idea</p>
+<p><strong>Source:</strong> Screenshot</p>
+
+<p><strong>AI Summary:</strong></p>
+
+<p>
+Concept discussing a unified remittance and logistics platform
+for OFWs integrating balikbayan box tracking and payments.
+</p>
+
+<button onclick="showScreen('inbox')">Back</button>
+
+</div>
+
+<!-- CHAT -->
+
+<div id="chat" class="screen">
+
+<h2>Ask myGENE</h2>
+
+<input id="chatInput" placeholder="Ask something..." />
+
+<button onclick="askAI()">Ask</button>
+
+<div id="chatResponse"></div>
+
+</div>
+
+<!-- INSIGHTS -->
+
+<div id="insights" class="screen">
+
+<h2>Insights</h2>
+
+<p>This week you saved:</p>
+
+<ul>
+<li>7 Ideas</li>
+<li>3 Articles</li>
+<li>2 Voice Thoughts</li>
+</ul>
+
+<p><strong>Top Topics</strong></p>
+
+<ul>
+<li>OFW logistics</li>
+<li>Tourism investments</li>
+<li>Quarry regulation</li>
+</ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
